@@ -10,10 +10,19 @@ public func routes(_ router: Router) throws {
     router.get("age") { req in
         return 32
     }
+    
+    router.get("json") { req in
+        return Person(name: "Dilshod", age: 32)
+    }
 }
 
 
 
+
+struct Person: Content {
+    var name: String
+    var age: Int
+}
 
 /* ORIGINAL TEMPLATE
     // Basic "It works" example
