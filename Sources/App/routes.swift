@@ -36,6 +36,8 @@ public func routes(_ router: Router) throws {
     
     //curl -H "Content-Type: application/json" -X PATCH -d '{"username":"midna"}' http://localhost:8080/users/1 where 1 is user id
     router.patch("usersJSON", User.parameter, use: userController.updateJSON)
+    
+    router.delete("usersJSON", User.parameter, use: userController.deleteJSON)
 }
 
 
