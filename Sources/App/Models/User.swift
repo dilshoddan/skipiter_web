@@ -22,3 +22,4 @@ final class User: SQLiteModel {
 
 extension User: Content {}
 extension User: Migration {}
+extension User: Parameter {}

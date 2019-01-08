@@ -30,41 +30,13 @@ public func configure(_ config: inout Config,
     migrations.add(model: User.self, database: .sqlite)
     services.register(migrations)
         
-    ///CHANGE LISTENING PORT TO 8001
-//    let myService = NIOServerConfig.default(port: 8001)
-//    services.register(myService)
+
 
 
 
 }
 
-/* ORIGINAL TEMPLATE
- 
-     /// Register providers first
-     try services.register(FluentSQLiteProvider())
- 
-     /// Register routes to the router
-     let router = EngineRouter.default()
-     try routes(router)
-     services.register(router, as: Router.self)
- 
-     /// Register middleware
-     var middlewares = MiddlewareConfig() // Create _empty_ middleware config
-     /// middlewares.use(FileMiddleware.self) // Serves files from `Public/` directory
-     middlewares.use(ErrorMiddleware.self) // Catches errors and converts to HTTP response
-     services.register(middlewares)
- 
-     // Configure a SQLite database
-     let sqlite = try SQLiteDatabase(storage: .memory)
- 
-     /// Register the configured SQLite database to the database config.
-     var databases = DatabasesConfig()
-     databases.add(database: sqlite, as: .sqlite)
-     services.register(databases)
- 
-     /// Configure migrations
-     var migrations = MigrationConfig()
-     migrations.add(model: Todo.self, database: .sqlite)
-     services.register(migrations)
- 
- */
+
+///CHANGE LISTENING PORT TO 8001
+//    let myService = NIOServerConfig.default(port: 8001)
+//    services.register(myService)

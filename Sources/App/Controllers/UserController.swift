@@ -34,4 +34,14 @@ final class UserController {
             return user.save(on: req)
         }
     }
+    
+    func updateJSON(_ req: Request) throws -> Future<User> {
+        return try req.parameters.next(User.self).flatMap { user in
+            return try req.content.decode(User.self).flatMap { newUser in
+                user.userName = newUser.userName
+                user.age = newUser.age
+                return user.save(on: req)
+            }
+        }
+    }
 }
