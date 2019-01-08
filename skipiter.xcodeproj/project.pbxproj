@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		84CFC20521E5034D00A01C06 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC20421E5034D00A01C06 /* Token.swift */; };
 		OBJ_1000 /* FluentSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Fluent::FluentSQL::Product" /* FluentSQL.framework */; };
 		OBJ_1001 /* SQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SQL::SQL::Product" /* SQL.framework */; };
 		OBJ_1002 /* Fluent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Fluent::Fluent::Product" /* Fluent.framework */; };
@@ -5594,6 +5595,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84CFC20421E5034D00A01C06 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		"Auth::Authentication::Product" /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Command::Product" /* Command.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Command.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Console::Product" /* Console.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Console.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -7340,6 +7342,7 @@
 			children = (
 				OBJ_13 /* Todo.swift */,
 				OBJ_14 /* User.swift */,
+				84CFC20421E5034D00A01C06 /* Token.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -12834,6 +12837,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				84CFC20521E5034D00A01C06 /* Token.swift in Sources */,
 				OBJ_967 /* TodoController.swift in Sources */,
 				OBJ_968 /* UserController.swift in Sources */,
 				OBJ_969 /* Todo.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import FluentSQLite
 import Vapor
+import Authentication
 
 final class User: SQLiteModel {
     var id: Int?
@@ -18,6 +19,10 @@ final class User: SQLiteModel {
         self.age = age
     }
     
+}
+
+extension User: TokenAuthenticatable {
+    typealias TokenType = Token
 }
 
 extension User: Content {}
