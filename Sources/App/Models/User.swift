@@ -11,9 +11,11 @@ import Vapor
 final class User: SQLiteModel {
     var id: Int?
     var userName: String
-    init(id: Int? = nil, userName: String) {
+    var age: Int
+    init(id: Int? = nil, userName: String, age: Int) {
         self.id = id
         self.userName = userName
+        self.age = age
     }
     
 }

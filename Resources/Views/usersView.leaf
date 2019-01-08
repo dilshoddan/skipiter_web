@@ -3,25 +3,32 @@
     <head>
         <title>Model</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    </head>
+            </head>
     <body class="container">
         <h1 class="mt-3"> Userlist </h1>
         
         <form method="POST" action="/users">
             <div class="input-group">
-                <input type="text" name="userName" class="form-control">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="submit">
-                            Create
-                        </button>
-                    </div>
-            </div>
+                Name:
+                <input type="text" name="userName" class="form-control"><br/>
+                    Age:
+                    <input type="text" name="age" class="form-control"><br/>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit">
+                                Create
+                            </button>
+                        </div>
+                        </div>
         </form>
         
         #for(user in userList) {
         <p class="mb-0">
-        #(user.userName)
+        Age: #(user.age)
         </p>
+        <p class="mb-0">
+        Name: #(user.userName)
+        </p>
+        <hr>
         }
     </body>
 </html>
