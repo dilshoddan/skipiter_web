@@ -39,6 +39,12 @@ public func routes(_ router: Router) throws {
 //        }
 //    }
     router.post("users", use: userController.create)
+    
+    router.get("usersJSON", use: userController.listJSON)
+    //call the post route on terminal like below or use postman or paw
+    //curl -H "Content-Type: application/json" -X POST -d '{"userName": "Fiona", "age": 23}' http://localhost:8080/usersJSON
+    router.post("usersJSON", use: userController.createJSON)
+    
 }
 
 

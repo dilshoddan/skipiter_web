@@ -16,15 +16,22 @@ final class UserController {
         }
     }
     
-    func listJSON(_ req: Request) throws -> Future<[User]> {
-        return User.query(on: req).all()
-    }
-    
     func create(_ req: Request) throws -> Future<Response> {
         return try req.content.decode(User.self).flatMap { user in
             return user.save(on: req).map { _ in
                 return req.redirect(to: "users")
             }
+        }
+    }
+    
+    
+    func listJSON(_ req: Request) throws -> Future<[User]> {
+        return User.query(on: req).all()
+    }
+    
+    func createJSON(_ req: Request) throws -> Future<User> {
+        return try req.content.decode(User.self).flatMap { user in
+            return user.save(on: req)
         }
     }
 }
