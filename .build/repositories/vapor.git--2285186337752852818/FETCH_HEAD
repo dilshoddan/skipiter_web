@@ -15,7 +15,7 @@ b552717caaf0a02d4067c3f1dfa43f2b8e1f8569	not-for-merge	branch 'parameters-advanc
 c4ecb138b0bb53aad74b9e52ebd318b53063bde2	not-for-merge	branch 'rafiki270-patch-1' of https://github.com/vapor/vapor
 3e96575c14e8c91964765c2e3b9261cdbf0a3a21	not-for-merge	branch 'rc23-updates' of https://github.com/vapor/vapor
 61c7bbfbe623cff841b63abd94408d06b4f9f464	not-for-merge	branch 'siemensikkema-patch-1' of https://github.com/vapor/vapor
-914a72d28755abb3e095d782bda67796677130f5	not-for-merge	branch 'twof-patch-1' of https://github.com/vapor/vapor
+fe57fd77755dd07c2de7c54f191e7cf3a654b29d	not-for-merge	branch 'twof-patch-1' of https://github.com/vapor/vapor
 7ed1a90fb24bf52b27f6d035547677330fe16e9b	not-for-merge	branch 'urlencodedform-gm' of https://github.com/vapor/vapor
 b4fcd10d565ed32ecdf8ecae98487fc6ced73254	not-for-merge	branch 'vapor2' of https://github.com/vapor/vapor
 de50c0877fc3b825fe8da273c0d29ee0a3d2ce84	not-for-merge	branch 'ws-debug' of https://github.com/vapor/vapor
@@ -489,8 +489,8 @@ c5ffdb6bdf54e270c83b3ec329915754ba723b94	not-for-merge	'refs/pull/1840/merge' of
 0185381ffeaa6b3b0b7bb7e1349f2802adfed226	not-for-merge	'refs/pull/1852/merge' of https://github.com/vapor/vapor
 979eeae6ac2dcd46df52c2e3a3f5c38218d1b679	not-for-merge	'refs/pull/1856/head' of https://github.com/vapor/vapor
 c725760dfc04d73548901dbc3a4c399cc5e62532	not-for-merge	'refs/pull/186/head' of https://github.com/vapor/vapor
-914a72d28755abb3e095d782bda67796677130f5	not-for-merge	'refs/pull/1861/head' of https://github.com/vapor/vapor
-bef92dc97f7e15b085681c6250b0866aa9a25a6d	not-for-merge	'refs/pull/1861/merge' of https://github.com/vapor/vapor
+fe57fd77755dd07c2de7c54f191e7cf3a654b29d	not-for-merge	'refs/pull/1861/head' of https://github.com/vapor/vapor
+1ef3d12fa8f32adf52834424ace11f1f3018790f	not-for-merge	'refs/pull/1861/merge' of https://github.com/vapor/vapor
 4962bdcaf5f1103b325dcb327e28e3e7a31d70db	not-for-merge	'refs/pull/1862/head' of https://github.com/vapor/vapor
 6a02830e7dc00c43a42d5be08444d8aef6db9a64	not-for-merge	'refs/pull/187/head' of https://github.com/vapor/vapor
 1dc167600c66335c155b9ee7c2f1129aa858a05b	not-for-merge	'refs/pull/189/head' of https://github.com/vapor/vapor
