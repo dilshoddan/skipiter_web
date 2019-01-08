@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		84CFBFA121E476E600A01C06 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFBFA021E476E600A01C06 /* User.swift */; };
+		84CFBFA321E4976400A01C06 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFBFA221E4976400A01C06 /* UserController.swift */; };
 		OBJ_1082 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* AppTests.swift */; };
 		OBJ_1084 /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "skipiter::App::Product" /* App.framework */; };
 		OBJ_1085 /* Leaf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Leaf::Leaf::Product" /* Leaf.framework */; };
@@ -5240,6 +5241,7 @@
 
 /* Begin PBXFileReference section */
 		84CFBFA021E476E600A01C06 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		84CFBFA221E4976400A01C06 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		"Console::Command::Product" /* Command.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Command.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Console::Product" /* Console.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Console.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Logging::Product" /* Logging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Logging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -6920,6 +6922,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_12 /* TodoController.swift */,
+				84CFBFA221E4976400A01C06 /* UserController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -12105,6 +12108,7 @@
 			files = (
 				OBJ_938 /* TodoController.swift in Sources */,
 				OBJ_939 /* Todo.swift in Sources */,
+				84CFBFA321E4976400A01C06 /* UserController.swift in Sources */,
 				OBJ_940 /* app.swift in Sources */,
 				OBJ_941 /* boot.swift in Sources */,
 				OBJ_942 /* configure.swift in Sources */,

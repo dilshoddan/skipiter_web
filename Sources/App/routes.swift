@@ -21,21 +21,24 @@ public func routes(_ router: Router) throws {
         return try req.view().render("whoAmI", person)
     }
     
-    router.get("users") { req -> Future<View> in
-        return User.query(on: req).all().flatMap { users in
-            let data = ["userList": users]
-            return try req.view().render("usersView", data)
-        }
-        
-    }
+//    router.get("users") { req -> Future<View> in
+//        return User.query(on: req).all().flatMap { users in
+//            let data = ["userList": users]
+//            return try req.view().render("usersView", data)
+//        }
+//
+//    }
+    let userController = UserController()
+    router.get("users", use: userController.list)
     
-    router.post("users") { req -> Future<Response> in
-        return try req.content.decode(User.self).flatMap { user in
-            return user.save(on: req).map { _ in
-                return req.redirect(to: "users")
-            }
-        }
-    }
+//    router.post("users") { req -> Future<Response> in
+//        return try req.content.decode(User.self).flatMap { user in
+//            return user.save(on: req).map { _ in
+//                return req.redirect(to: "users")
+//            }
+//        }
+//    }
+    router.post("users", use: userController.create)
 }
 
 
