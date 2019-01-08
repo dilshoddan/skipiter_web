@@ -7,6 +7,8 @@
 
 import Vapor
 import Crypto
+import Random
+import FluentSQLite
 
 final class UserController {
     
@@ -25,7 +27,36 @@ final class UserController {
         }
     }
     
+    func login(_ req: Request) throws -> Future<Token> {
+        return try req.content.decode(User.self).flatMap { user in
+            return User.query(on: req).filter(\.email == user.email).first().flatMap { fetchedUser in
+                guard let existingUser = fetchedUser else {
+                    throw Abort(HTTPStatus.notFound)
+                }
+                
+                let hasher = try req.make(BCryptDigest.self)
+                if try hasher.verify(user.password, created: existingUser.password) {
+                    let tokenString = try URandom().generateData(count: 32).base64EncodedString()
+                    let token = try Token(token: tokenString, userId: existingUser.requireID())
+                    return token.save(on: req)
+                } else {
+                    throw Abort(HTTPStatus.unauthorized)
+                }
+            }
+        }
+    }
+    
+    func profile(_ req: Request) throws -> Future<String> {
+        let user = try req.requireAuthenticated(User.self)
+        return req.future("Welcome \(user.email)")
+    }
+    
 }
+
+
+
+
+
 
 /*
  
