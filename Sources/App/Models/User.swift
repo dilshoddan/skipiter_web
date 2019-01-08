@@ -11,14 +11,24 @@ import Authentication
 
 final class User: SQLiteModel {
     var id: Int?
-    var userName: String
-    var age: Int
-    init(id: Int? = nil, userName: String, age: Int) {
+    var email: String
+    var password: String
+    
+    init(id: Int? = nil, email: String, password: String) {
         self.id = id
-        self.userName = userName
-        self.age = age
+        self.email = email
+        self.password = password
     }
     
+    
+    
+}
+
+extension User {
+    struct UserPublic: Content {
+        let id: Int
+        let email: String
+    }
 }
 
 extension User: TokenAuthenticatable {
@@ -28,3 +38,14 @@ extension User: TokenAuthenticatable {
 extension User: Content {}
 extension User: Migration {}
 extension User: Parameter {}
+
+
+/*
+ init(id: Int? = nil, userName: String, password: String, email: String, age: Int) {
+ self.id = id
+ self.userName = userName
+ self.email = email
+ self.password = password
+ self.age = age
+ }
+ */
