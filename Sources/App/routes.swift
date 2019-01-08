@@ -11,6 +11,7 @@ public func routes(_ router: Router) throws {
     let tokenAuthenticationMiddleware = User.tokenAuthMiddleware()
     let authedRoutes = router.grouped(tokenAuthenticationMiddleware)
     authedRoutes.get("profile", use: userController.profile)
+    authedRoutes.get("logout", use: userController.logout)
     
 }
 

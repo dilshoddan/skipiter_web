@@ -36,9 +36,15 @@ final class UserController {
                 
                 let hasher = try req.make(BCryptDigest.self)
                 if try hasher.verify(user.password, created: existingUser.password) {
-                    let tokenString = try URandom().generateData(count: 32).base64EncodedString()
-                    let token = try Token(token: tokenString, userId: existingUser.requireID())
-                    return token.save(on: req)
+                    return try Token
+                        .query(on: req)
+                        .filter(\Token.userId, .equal, existingUser.requireID())
+                        .delete()
+                        .flatMap { _ in
+                            let tokenString = try URandom().generateData(count: 32).base64EncodedString()
+                            let token = try Token(token: tokenString, userId: existingUser.requireID())
+                            return token.save(on: req)
+                    }
                 } else {
                     throw Abort(HTTPStatus.unauthorized)
                 }
@@ -49,6 +55,15 @@ final class UserController {
     func profile(_ req: Request) throws -> Future<String> {
         let user = try req.requireAuthenticated(User.self)
         return req.future("Welcome \(user.email)")
+    }
+    
+    func logout(_ req: Request) throws -> Future<HTTPResponse> {
+        let user = try req.requireAuthenticated(User.self)
+        return try Token
+            .query(on: req)
+            .filter(\Token.userId, .equal, user.requireID())
+            .delete()
+            .transform(to: HTTPResponse(status: .ok))
     }
     
 }
