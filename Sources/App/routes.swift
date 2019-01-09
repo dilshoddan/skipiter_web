@@ -4,6 +4,7 @@ import Vapor
 public func routes(_ router: Router) throws {
     
     let userController = UserController()
+    let skipController = SkipController()
     
     router.post("register", use: userController.register)
     router.post("login", use: userController.login)
@@ -13,10 +14,11 @@ public func routes(_ router: Router) throws {
     authedRoutes.get("profile", use: userController.profile)
     authedRoutes.get("logout", use: userController.logout)
     authedRoutes.post("deleteAllSkips", use: userController.deleteAllSkips)
+    authedRoutes.get("listSkips", use: userController.listSkips)
+    authedRoutes.post("skip", use: skipController.create)
     
     
-    let skipController = SkipController()
-    router.post("skip", use: skipController.create)
+    //router.post("skip", use: skipController.create)
     
 }
 

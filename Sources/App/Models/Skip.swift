@@ -21,13 +21,19 @@ final class Skip: SQLiteModel {
         self.userID = userID
     }
     
+    
+}
+
+extension Skip: Content {}
+extension Skip: Migration {}
+extension Skip: Parameter {}
+
+extension Skip {
     struct SkipForm: Content {
         var text: String
         var userId: Int
     }
 }
-
-extension Skip: Migration{}
 
 extension Skip {
     var user: Parent<Skip, User> {
