@@ -23,7 +23,6 @@ final class Skip: SQLiteModel {
     
     struct SkipForm: Content {
         var text: String
-        var date: Date
         var userId: Int
     }
 }

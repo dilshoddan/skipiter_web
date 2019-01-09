@@ -66,6 +66,18 @@ final class UserController {
             .transform(to: HTTPResponse(status: .ok))
     }
     
+    func deleteAllSkips(_ req: Request) throws -> Future<Response> {
+        let user = try req.requireAuthenticated(User.self)
+        
+        return try req.parameters.next(User.self).flatMap { user in
+            return try user.skips.query(on: req).delete().flatMap { _ in
+                return user.delete(on: req).map { _ in
+                    return req.redirect(to: "/users")
+                }
+            }
+        }
+    }
+    
 }
 
 
