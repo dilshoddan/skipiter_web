@@ -11,7 +11,7 @@ import Authentication
 
 final class SkipController {
     
-    func create(_ req: Request) throws -> Future<Response> {
+    func create(_ req: Request) throws -> Future<Skip.SkipForm> {
         let user = try req.requireAuthenticated(User.self)
         return try req.content.decode(Skip.SkipForm.self).flatMap { skipForm in
             return User.find(skipForm.userId, on: req).flatMap { user in
@@ -22,8 +22,8 @@ final class SkipController {
                     text: skipForm.text,
                     userID: userId
                 )
-                return skip.save(on: req).map { _ in
-                    return req.redirect(to: "/users")
+                return skip.save(on: req).map { s in
+                    return Skip.SkipForm(text: s.text, userId: userId)
                 }
             }
         }
