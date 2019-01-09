@@ -23,6 +23,7 @@
 /* Begin PBXBuildFile section */
 		84CFC20521E5034D00A01C06 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFC20421E5034D00A01C06 /* Token.swift */; };
 		84F5A09321E5D0050016E714 /* Skip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5A09221E5D0050016E714 /* Skip.swift */; };
+		84F5A09521E5D4110016E714 /* SkipController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F5A09421E5D4110016E714 /* SkipController.swift */; };
 		OBJ_1000 /* FluentSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Fluent::FluentSQL::Product" /* FluentSQL.framework */; };
 		OBJ_1001 /* SQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SQL::SQL::Product" /* SQL.framework */; };
 		OBJ_1002 /* Fluent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Fluent::Fluent::Product" /* Fluent.framework */; };
@@ -5598,6 +5599,7 @@
 /* Begin PBXFileReference section */
 		84CFC20421E5034D00A01C06 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		84F5A09221E5D0050016E714 /* Skip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skip.swift; sourceTree = "<group>"; };
+		84F5A09421E5D4110016E714 /* SkipController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipController.swift; sourceTree = "<group>"; };
 		"Auth::Authentication::Product" /* Authentication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Authentication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Command::Product" /* Command.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Command.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Console::Console::Product" /* Console.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Console.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -9600,6 +9602,7 @@
 			children = (
 				OBJ_10 /* TodoController.swift */,
 				OBJ_11 /* UserController.swift */,
+				84F5A09421E5D4110016E714 /* SkipController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -12840,6 +12843,7 @@
 			buildActionMask = 0;
 			files = (
 				84CFC20521E5034D00A01C06 /* Token.swift in Sources */,
+				84F5A09521E5D4110016E714 /* SkipController.swift in Sources */,
 				OBJ_967 /* TodoController.swift in Sources */,
 				OBJ_968 /* UserController.swift in Sources */,
 				OBJ_969 /* Todo.swift in Sources */,

@@ -21,6 +21,11 @@ final class Skip: SQLiteModel {
         self.userID = userID
     }
     
+    struct SkipForm: Content {
+        var text: String
+        var date: Date
+        var userId: Int
+    }
 }
 
 extension Skip: Migration{}
