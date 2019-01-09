@@ -24,6 +24,10 @@ final class User: SQLiteModel {
     
 }
 
+extension User: Content {}
+extension User: Migration {}
+extension User: Parameter {}
+
 extension User {
     struct UserPublic: Content {
         let id: Int
@@ -35,9 +39,12 @@ extension User: TokenAuthenticatable {
     typealias TokenType = Token
 }
 
-extension User: Content {}
-extension User: Migration {}
-extension User: Parameter {}
+extension User {
+    var skips: Children<User, Skip> {
+        return children(\.userID)
+    }
+}
+
 
 
 /*
