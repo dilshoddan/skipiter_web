@@ -74,7 +74,7 @@ final class UserController {
             .all().map { skips in
                 var skipForms : [Skip.SkipForm] = []
                 for skip in skips {
-                    skipForms.append(Skip.SkipForm(text: skip.text, userId: skip.userID))
+                    skipForms.append(Skip.SkipForm(text: skip.text))
                 }
             return skipForms
         }
@@ -82,12 +82,18 @@ final class UserController {
     
     func deleteAllSkips(_ req: Request) throws -> Future<Response> {
         let user = try req.requireAuthenticated(User.self)
-        
-        return try req.parameters.next(User.self).flatMap { user in
-            return try user.skips.query(on: req).delete().map { _ in
-                return req.redirect(to: "/users")
-                
+        if let userId = user.id {
+            return User.find(userId, on: req).flatMap { user in
+                guard let user = user else {
+                    throw Abort(.badRequest)
+                }
+                return try user.skips.query(on: req).delete().map { _ in
+                    return req.redirect(to: "/users")
+                    
+                }
             }
+        } else {
+            throw Abort(HTTPStatus.unauthorized)
         }
     }
     
@@ -99,6 +105,21 @@ final class UserController {
 
 
 /*
+ 
+ let user = try req.requireAuthenticated(User.self)
+ return User.find(userId, on: req).flatMap { user in
+ guard let userId = try user?.requireID() else {
+ throw Abort(.badRequest)
+ }
+ return try user.skips.query(on: req).delete().map { _ in
+ return req.redirect(to: "/users")
+ 
+ }
+ }
+ } else {
+ throw Abort(HTTPStatus.unauthorized)
+ }
+ 
  
  func list(_ req: Request) throws -> Future<View> {
  return User.query(on: req).all().flatMap { users in

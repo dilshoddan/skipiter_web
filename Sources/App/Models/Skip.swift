@@ -31,7 +31,6 @@ extension Skip: Parameter {}
 extension Skip {
     struct SkipForm: Content {
         var text: String
-        var userId: Int
     }
 }
 
