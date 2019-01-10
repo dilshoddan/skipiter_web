@@ -13,7 +13,7 @@ public func routes(_ router: Router) throws {
     let authedRoutes = router.grouped(tokenAuthenticationMiddleware)
     authedRoutes.get("profile", use: userController.profile)
     authedRoutes.get("logout", use: userController.logout)
-    authedRoutes.post("deleteAllSkips", use: userController.deleteAllSkips)
+    authedRoutes.get("deleteSkips", use: userController.deleteSkips)
     authedRoutes.get("listSkips", use: userController.listSkips)
     authedRoutes.post("skip", use: skipController.create)
     

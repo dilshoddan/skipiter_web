@@ -80,16 +80,17 @@ final class UserController {
         }
     }
     
-    func deleteAllSkips(_ req: Request) throws -> Future<Response> {
+    func deleteSkips(_ req: Request) throws -> Future<Response> {
         let user = try req.requireAuthenticated(User.self)
         if let userId = user.id {
             return User.find(userId, on: req).flatMap { user in
-                guard let user = user else {
-                    throw Abort(.badRequest)
-                }
-                return try user.skips.query(on: req).delete().map { _ in
-                    return req.redirect(to: "/users")
+                if let user = user {
+                    return try user.skips.query(on: req).delete().map { _ in
+                        return req.response(http: HTTPResponse(status: .ok))
                     
+                    }
+                } else {
+                    throw Abort(HTTPStatus.expectationFailed, reason: "User not found on DB")
                 }
             }
         } else {

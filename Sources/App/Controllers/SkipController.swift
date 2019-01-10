@@ -15,6 +15,7 @@ final class SkipController {
         let user = try req.requireAuthenticated(User.self)
         if let userId = user.id {
             return try req.content.decode(Skip.SkipForm.self).flatMap { skipForm in
+                //this is extra remove it later
                 return User.find(userId, on: req).flatMap { user in
                     guard let userId = try user?.requireID() else {
                         throw Abort(.badRequest)
