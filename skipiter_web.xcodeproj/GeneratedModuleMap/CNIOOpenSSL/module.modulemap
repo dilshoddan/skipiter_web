@@ -1,0 +1,4 @@
+module CNIOOpenSSL {
+    umbrella "/Users/admin/Documents/work/vapor/skipiter_web/.build/checkouts/swift-nio-ssl.git--6061924514659166877/Sources/CNIOOpenSSL/include"
+    export *
+}
